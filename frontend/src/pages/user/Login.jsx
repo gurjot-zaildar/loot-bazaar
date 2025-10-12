@@ -2,14 +2,15 @@
 import {useForm} from "react-hook-form"
 import {nanoid} from "nanoid"
 import { Link } from 'react-router-dom'
+import { asyncloginuser } from "../../store/actions/userActions";
+import { useDispatch } from 'react-redux'
 
 const Login = () => {
-
+const dispatch = useDispatch()
   const{register,handleSubmit} = useForm();
 
   const loginhandler =(user)=>{
-    
-    console.log(user)
+   dispatch(asyncloginuser(user));
   }
 
   return (
