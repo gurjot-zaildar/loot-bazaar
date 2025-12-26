@@ -3,12 +3,14 @@ import Mainroutes from './routes/Mainroutes'
 import Nav from './components/Nav'
 import { asynccurrentuser } from './store/actions/userActions'
 import { useDispatch } from 'react-redux'
+import { asyncloadproduct } from './store/actions/productAction'
 
 const App = () => {
   const dispatch = useDispatch();
   useEffect(()=>{
-    dispatch(asynccurrentuser())
-  },[])
+    dispatch(asynccurrentuser());
+    dispatch(asyncloadproduct());
+  }, []);
   return (
     <div className='text-white bg-gray-800 h-screen'>
       <Nav/>

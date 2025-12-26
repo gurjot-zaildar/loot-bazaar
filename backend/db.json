@@ -11,18 +11,19 @@
   ],
   "users": [
     {
-      "id": "hsoklhcw",
-      "username": "gurjot singh",
+      "id": "mLN87RTvd3aPdLYT4sHxp",
+      "username": "gurjot",
       "email": "gurjot@gmail.com",
       "password": "123456",
       "isAdmin": true
     },
     {
-      "id": "0roTJbWl7zS7rMz-o_iZx",
-      "username": "gurjot singh",
-      "email": "sdgsd@gmail.com",
-      "password": "",
+      "id": "auwe03d4wJCFmnB-5IdvY",
+      "username": "gabbar",
+      "email": "gabbar@gabbar.com",
+      "password": "gabbar",
       "isAdmin": false
     }
-  ]
+  ],
+  "carts": []
 }

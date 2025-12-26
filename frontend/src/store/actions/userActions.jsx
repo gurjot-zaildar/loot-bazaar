@@ -12,7 +12,7 @@ export const asynccurrentuser = (user) => async(dispatch,getState)=>{
     } catch (error) {
        console.log(error);
     }
-}
+};
 
 export const asynclogoutuser = (user) => async(dispatch,getState)=>{
     try {
