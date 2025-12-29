@@ -10,9 +10,9 @@ const App = () => {
   useEffect(()=>{
     dispatch(asynccurrentuser());
     dispatch(asyncloadproduct());
-  }, []);
+  },[]);
   return (
-    <div className='text-white bg-gray-800 h-screen'>
+    <div className='text-white overflow-auto bg-gray-800 h-screen'>
       <Nav/>
      <Mainroutes/>
     </div>
