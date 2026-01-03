@@ -1,15 +1,12 @@
 import React, { useEffect } from 'react'
 import { useForm } from 'react-hook-form';
 import { useSelector, useDispatch } from 'react-redux';
-import { useParams, useNavigate } from 'react-router-dom'
-import { asyncdeleteproduct, asyncupdateproduct } from '../../store/actions/productAction';
+import { useNavigate } from 'react-router-dom'
 import { asyncdeleteuser, asynclogoutuser, asyncupdateuser } from '../../store/actions/userActions';
 
 
 const UserProfile = () => {
-    const { id } = useParams();
-  const {productReducer:{products},userReducer:{users}} = useSelector((state)=> state) || [];
-  const product = products.find((p)=> p.id == id);
+  const users = useSelector((state) => state.userReducer.users);
 
   const { register, handleSubmit, reset } = useForm();
   const navigate = useNavigate();
@@ -18,10 +15,9 @@ const UserProfile = () => {
   useEffect(() => {
     if (users) {
       reset({
-        username: users.title,
-        email: users.price,
-        password: users.description,
-       
+        username: users.username,
+        email: users.email,
+        password: users.password,
       })
     }
   }, [users, reset])
@@ -31,7 +27,7 @@ const UserProfile = () => {
     navigate('/products');
   }
 
-  if (!product) return <div>Loading...</div>;
+  if (!users) return <div>Loading...</div>; 
 
   const logoutuserhandler=()=>{
     dispatch(asynclogoutuser())

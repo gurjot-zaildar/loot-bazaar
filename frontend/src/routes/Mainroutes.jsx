@@ -7,6 +7,7 @@ import ProductDetail from '../pages/admin/ProductDetail'
 import UserProfile from '../pages/user/UserProfile'
 import PageNotFound from '../pages/user/PageNotFound'
 import AuthWrapper from './AuthWrapper'
+import Cart from '../pages/user/Cart'
 
 const Mainroutes = () => {
   return (
@@ -20,6 +21,7 @@ const Mainroutes = () => {
         
         <Route path='/admin/create-product' element={<AuthWrapper><CreateProduct/></AuthWrapper>} />
         <Route path='/admin/user-profile' element={<AuthWrapper><UserProfile/></AuthWrapper>} />
+        <Route path='/cart' element={<AuthWrapper><Cart/></AuthWrapper>} />
         <Route path='/product/:id' element={<AuthWrapper><ProductDetail/></AuthWrapper>} />
         
 

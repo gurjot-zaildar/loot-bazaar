@@ -11,18 +11,12 @@
   ],
   "users": [
     {
-      "id": "auwe03d4wJCFmnB-5IdvY",
-      "username": "gabbar",
-      "email": "gabbar@gabbar.com",
-      "password": "gabbar",
-      "isAdmin": true
-    },
-    {
       "id": "nWU0AbvPtKw6j5UA9Doyo",
       "username": "gurjot",
       "email": "gurjot@gmail.com",
       "password": "123456",
-      "isAdmin": false
+      "isAdmin": true,
+      "cart": []
     }
   ],
   "carts": []

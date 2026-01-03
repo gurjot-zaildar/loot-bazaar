@@ -18,6 +18,7 @@ const user = useSelector((state)=> state.userReducer.users);
       <NavLink to={"/admin/create-product"}>create product</NavLink>
      )}
       <NavLink to={"/admin/user-profile"}>setting</NavLink>
+      <NavLink to={"/cart"}>cart</NavLink>
   
     </>):(<>
       <NavLink to={"/login"}>Login</NavLink>

@@ -13,6 +13,7 @@ const Register = () => {
   const registerhandler =(user)=>{
     user.id=nanoid();
     user.isAdmin = false;
+    user.cart = [];
     console.log(user)
     dispatch(asyncregisteruser(user))
     navigate("/login");

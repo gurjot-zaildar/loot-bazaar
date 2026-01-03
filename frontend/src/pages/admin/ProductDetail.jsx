@@ -6,8 +6,9 @@ import { asyncdeleteproduct, asyncupdateproduct } from '../../store/actions/prod
 
 const ProductDetail = () => {
   const { id } = useParams();
-  const {productReducer:{products},userReducer:{users}} = useSelector((state)=> state) || [];
-  const product = products.find((p)=> p.id == id);
+  const products = useSelector((state) => state.productReducer.products) || [];
+  const users = useSelector((state) => state.userReducer.users);
+  const product = products.find((p) => p.id == id);
 
   const { register, handleSubmit, reset } = useForm();
   const navigate = useNavigate();
