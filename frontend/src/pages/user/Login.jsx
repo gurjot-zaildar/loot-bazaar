@@ -12,7 +12,7 @@ const dispatch = useDispatch()
 
   const loginhandler =(user)=>{
    dispatch(asyncloginuser(user));
-   navigate("/")
+  
   }
 
   return (
