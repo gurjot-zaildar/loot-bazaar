@@ -1,33 +1,16 @@
-import { lazy, Suspense, useEffect, useState } from 'react';
-import axios from '../../api/axoisconfig';
+import { lazy, Suspense } from 'react';
+
 import InfiniteScroll from 'react-infinite-scroll-component';
-import { useDispatch, useSelector } from 'react-redux';
-import {loadlazyproduct} from "../../store/reducers/productSlice"
+import useInfinityProducts from '../../utils/useInfinityProducts';
+
+
+
 const ProductTemplate= lazy( ()=>import('../../components/ProductTemplate'));
 
 
 const Products = () => {
-  const dispatch=useDispatch();
-const {products} = useSelector((state)=>state.productReducer)
-const [hasMore, sethasMore] = useState(true)
 
-const fetchproducts = async()=>{
-  try{
-      const {data} = await axios.get(`/products?_limit=6&_start=${products.length}`)
-      if(data.length === 0){
-        sethasMore(false)
-      }else{
-        sethasMore(true)
-        dispatch(loadlazyproduct(data))
-      }
-  }catch(error){
-    console.log(error)
-  }
-}
-
-useEffect(()=>{
-  fetchproducts()
-},[]);
+const {products,hasMore,fetchproducts}= useInfinityProducts()
 
   
   return <InfiniteScroll
