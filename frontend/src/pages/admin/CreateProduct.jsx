@@ -5,6 +5,7 @@ import { Link, Navigate, useNavigate } from 'react-router-dom'
 import { useDispatch } from "react-redux";
 import { asyncregisteruser } from "../../store/actions/userActions";
 import { asynccreateproduct } from '../../store/actions/productAction';
+import { toast } from 'react-toastify';
 
 const CreateProduct = () => {
    const{register,handleSubmit} = useForm();
@@ -14,7 +15,8 @@ const CreateProduct = () => {
     product.id=nanoid();
     console.log(product)
    dispatch(asynccreateproduct(product))
-   navigate("/products")
+    toast.success("Product Created successfully")
+   navigate("/")
   }
 
   return (

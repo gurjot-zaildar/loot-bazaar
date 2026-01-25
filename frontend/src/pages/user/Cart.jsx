@@ -42,7 +42,7 @@ const DecreaseQuantityHandler = (index) => {
     <li className='flex items-center justify-between' key={c.product.id}>
       <img className='w-[7vmax] h-[7vmax] object-cover' src={c.product.image} alt={c.product.title} />
       <span>{c.product.title}</span>
-      <span>{c.product.price}</span>
+      <span>{c.product.price * c.quantity}</span>
       <p>
         <button onClick={() => DecreaseQuantityHandler(index)}>-</button>
         <span className='mx-3'>{c.quantity}</span>

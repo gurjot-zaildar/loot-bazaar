@@ -3,6 +3,7 @@ import { useForm } from 'react-hook-form';
 import { useSelector, useDispatch } from 'react-redux';
 import { useParams, useNavigate } from 'react-router-dom'
 import { asyncdeleteproduct, asyncupdateproduct } from '../../store/actions/productAction';
+import { toast } from 'react-toastify';
 
 const ProductDetail = () => {
   const { id } = useParams();
@@ -29,7 +30,8 @@ const ProductDetail = () => {
   const UpdateProductHandler = (data) => {
     const updatedProduct = { id, ...data };
     dispatch(asyncupdateproduct(updatedProduct));
-    navigate('/products');
+    toast.success("Updated Successfully")
+    navigate('/');
   }
 
   if (!product) return <div>Loading...</div>;
@@ -37,7 +39,8 @@ const ProductDetail = () => {
 
   const deletehandler=()=>{
     dispatch(asyncdeleteproduct(id));
-    navigate("/products")
+     toast.success("Deleted Successfully")
+    navigate("/")
   }
 
   return (

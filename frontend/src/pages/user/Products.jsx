@@ -24,7 +24,7 @@ const {products,hasMore,fetchproducts}= useInfinityProducts()
    >
      <div className=" flex flex-wrap">
      { products.map((product) =>(
-       <Suspense fallback={<h1>loading...</h1>}>
+       <Suspense key={product.id} fallback={<h1>loading...</h1>}>
        <ProductTemplate key={product.id} product={product}/>
       </Suspense>
       ))}

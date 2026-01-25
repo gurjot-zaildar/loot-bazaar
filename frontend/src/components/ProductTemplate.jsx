@@ -1,12 +1,17 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import { Link } from 'react-router-dom'
+import { Link, Navigate, useNavigate } from 'react-router-dom'
 import {asyncupdateuser} from "../store/actions/userActions"
-const ProductTemplate = (product) => {
+
+ import { ToastContainer, toast } from 'react-toastify';
+
+const ProductTemplate = ({product}) => {
+
+  const dispatch = useDispatch();
+const users = useSelector((state)=> state.userReducer.users);
+const navigate=useNavigate()
 
     const AddtoCartHandler =(product)=>{
-         const dispatch = useDispatch();
-  const users = useSelector((state)=> state.userReducer.users);
         const copyuser= {...users , cart:[...users.cart]};
         const x = copyuser.cart.findIndex((c)=>c?.product?.id==product.id);
         if(x== -1){
@@ -18,6 +23,10 @@ const ProductTemplate = (product) => {
           }
         }
         dispatch(asyncupdateuser(copyuser.id, copyuser))
+        
+        toast.success("Added to cart 🛒");
+        navigate("/cart")
+      
       }
     
 
