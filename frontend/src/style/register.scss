@@ -1,0 +1,150 @@
+.main{
+   display: flex;
+   flex-direction: column;
+   color: black;
+   .box-1{
+    width: 100vw;
+    height: 30vh;
+    img{
+      width: 100%;
+      object-fit: fill;
+      border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10px;
+    }
+   }
+   .box-2{
+    height: 70vh;
+       align-content: center;
+       h1{
+        font-size: xx-large;
+        text-align: center;
+        margin-bottom: 5vh;
+        font-weight: 600;
+       }
+  .form{
+    display: flex;
+    flex-direction: column;
+    width: 80vw;
+    margin-left: 10vw;
+
+    .username{
+        font-size: x-large;
+        margin-bottom: 3vh;
+        padding: 5px;
+       padding-left: 10px;
+        border-radius: 15px;
+        font-family: Arial, Helvetica, sans-serif;
+        border: solid;
+        border-width: 2px;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+       transition: 0.4s;
+       
+        &:focus{
+        scale: 1.05;
+        }
+    }
+    .email{
+        font-size: x-large;
+        padding: 5px;
+       padding-left: 10px;
+        border-radius: 15px;
+        font-family: Arial, Helvetica, sans-serif;
+        border: solid;
+        border-width: 2px;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+       transition: 0.4s;
+       
+        &:focus{
+        scale: 1.05;
+        }
+    }
+    .password{
+ font-size: x-large;
+ margin-top: 3vh;
+        padding: 5px;
+       padding-left: 10px;
+        border-radius: 15px;
+        border: solid;
+        border-width: 2px;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        transition: 0.4s;
+         &:focus{
+        scale: 1.05;
+        }
+    }
+    button{
+        align-self: center;
+background-color: rgb(99, 255, 242);
+margin-top:5vh ;
+margin-bottom: 3vh;
+font-size: larger;
+font-weight: 600;
+padding: 10px;
+padding-left: 20px;
+padding-right: 20px;
+border-radius: 15px;
+border: none;
+transition: 0.2s;
+&:hover{
+  background-color: rgb(0, 234, 255);
+  scale: 1.1;
+
+}
+    }
+    p{
+        text-align: center;
+        font-size: large;
+        span{
+          color: rgb(0, 0, 255);
+        }
+    }
+  }
+}
+}
+
+@media(min-width:700px){
+  .main{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    .box-1{
+      width:40vw ;
+      height: 100vh;
+      img{
+       height: 100vh;
+       object-fit:fill;
+       border-bottom-left-radius: 0;
+       border-bottom-right-radius: 20px;
+       border-top-right-radius: 20px;
+       
+      }
+    }
+    .box-2{
+      width: 60vw;
+      height: 100vh;
+      .form{
+        width: 60vw;
+        margin-left: 0 ;
+         .username{
+          width: 35vw;
+          margin-left: 12.5vw;
+        }
+        .email{
+          width: 35vw;
+          margin-left: 12.5vw;
+        }
+        .password{
+         width: 35vw;
+          margin-left: 12.5vw;
+        }
+      }
+    }
+  }
+}

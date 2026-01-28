@@ -20,7 +20,7 @@ const App = () => {
 
 
   return (
-    <div className='text-white bg-gray-800'>
+    <div >
       <Nav/>
      <Mainroutes/>
        <ToastContainer />

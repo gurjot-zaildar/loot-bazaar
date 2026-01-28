@@ -6,6 +6,7 @@ import { useDispatch } from "react-redux";
 import { asyncregisteruser } from "../../store/actions/userActions";
 import { asynccreateproduct } from '../../store/actions/productAction';
 import { toast } from 'react-toastify';
+import "../../style/CreateProduct.css"
 
 const CreateProduct = () => {
    const{register,handleSubmit} = useForm();
@@ -20,35 +21,40 @@ const CreateProduct = () => {
   }
 
   return (
-    <div>
-     Register
+    <div className='create-product'>
+     <h1>create Product</h1>
 
       <form
       onSubmit={handleSubmit(CreateProductHandler)}
-      className='flex flex-col'>
+      className='form'>
         <input
         {...register("title")}
          type="text"
-        placeholder="title" />
+        placeholder="title" 
+        className='title'/>
         <input
         {...register("price")}
          type="number" 
-         placeholder='price' />
+         placeholder='price' 
+         className='price'/>
 
         <textarea
           {...register("description")}
           placeholder='description'
+          className='description'
         ></textarea>
 
         <input
         {...register("image")} 
         type="url" 
-        placeholder='image url' />
+        placeholder='image url' 
+        className='url'/>
 
          <input
         {...register("category")} 
         type="text" 
-        placeholder='category' />
+        placeholder='category' 
+        className='cat'/>
         <button>Create product </button>
       </form>
     </div>

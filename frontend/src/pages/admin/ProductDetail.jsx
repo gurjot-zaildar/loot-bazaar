@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useParams, useNavigate } from 'react-router-dom'
 import { asyncdeleteproduct, asyncupdateproduct } from '../../store/actions/productAction';
 import { toast } from 'react-toastify';
+import "../../style/ProductDetail.css"
 
 const ProductDetail = () => {
   const { id } = useParams();
@@ -45,11 +46,11 @@ const ProductDetail = () => {
 
   return (
     <>
-      <div className='w-full flex'>
-        <img className='w-1/2 h-1/2 object-cover' src={product.image} alt={product.title} />
+      <div className='main'>
+        <img src={product.image} alt={product.title} />
 
-        <div className='h-1/2 w-1/2'>
-          <h1 className='text-5xl font-thin'>{product.title}</h1>
+        <div className='box-1'>
+          <h1>{product.title}</h1>
           <h2>${product.price}</h2>
           <p>{product.description}</p>
           <button>add to cart</button>
@@ -63,32 +64,37 @@ const ProductDetail = () => {
 
         <form
           onSubmit={handleSubmit(UpdateProductHandler)}
-          className='flex w-full flex-col justify-start items-start'>
+          className='form'>
           <input
             {...register("title")}
             type="text"
-            placeholder="title" />
+            placeholder="title" 
+            className='title'/>
           <input
             {...register("price")}
             type="number"
-            placeholder='price' />
+            placeholder='price' 
+            className='price'/>
 
           <textarea
             {...register("description")}
             placeholder='description'
+            className='desc'
           ></textarea>
 
           <input
             {...register("image")}
             type="url"
-            placeholder='image url' />
+            placeholder='image url' 
+            className='url'/>
 
           <input
             {...register("category")}
             type="text"
-            placeholder='category' />
-          <button type='submit'>update product</button>
-        <button type='button' onClick={deletehandler}>delete product</button>
+            placeholder='category' 
+            className='cat'/>
+          <button className='update-btn' type='submit'>update product</button>
+        <button className='del-btn' type='button' onClick={deletehandler}>delete product</button>
         </form>
 }
       </div>

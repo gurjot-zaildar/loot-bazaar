@@ -10,7 +10,7 @@ const user = useSelector((state)=> state.userReducer.users);
 
 
   return (
-   <nav className='flex gap-10 justify-center '>
+   <nav className='flex gap-5 justify-center '>
 
     <NavLink to={"/"}>Home</NavLink>
     {user ? (<>

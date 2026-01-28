@@ -3,7 +3,7 @@
     {
       "id": "hgfdytfqyjhqw",
       "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
-      "price": "108",
+      "price": "$108",
       "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
       "category": "men's clothing",
       "image": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_t.png"
@@ -11,7 +11,7 @@
     {
       "id": "p1a2b3c4",
       "title": "Wireless Bluetooth Headphones",
-      "price": "79",
+      "price": "$79",
       "description": "High-quality wireless headphones with noise cancellation and long battery life.",
       "category": "electronics",
       "image": "https://fakestoreapi.com/img/61U7T1koQqL._AC_SX679_.jpg"
@@ -168,6 +168,14 @@
       "email": "gurjot@gmail.com",
       "password": "123456",
       "isAdmin": true,
+      "cart": []
+    },
+    {
+      "id": "e9Ejfur5Jnyw3CNviKgdP",
+      "username": "gabbar",
+      "email": "q@q.q",
+      "password": "",
+      "isAdmin": false,
       "cart": []
     }
   ],

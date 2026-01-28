@@ -4,6 +4,7 @@ import { Link, Navigate, useNavigate } from 'react-router-dom'
 import {asyncupdateuser} from "../store/actions/userActions"
 
  import { ToastContainer, toast } from 'react-toastify';
+ import "../style/ProductTemplate.css"
 
 const ProductTemplate = ({product}) => {
 
@@ -30,15 +31,18 @@ const navigate=useNavigate()
       }
     
 
-  return (<div className='w-[33%] mr-3 mb-3 border shadow' key={product.id}>
-        <img className="w-full h-[30vh] object-cover" src={product.image} alt={product.title} />
+  return (
+  <div className='product' key={product.id}>
+        <img src={product.image} alt={product.title} />
         <h1>{product.title}</h1>
         <small>{product.description?.slice(0,100)}....</small>
-        <div className='mt-3 p-3  flex justify-between items-center '>
+        <div className='info'>
+        <Link to= {`/product/${product.id}`}>more  info</Link>  
+        </div>
+        <div className='box-1'>
           <p>{product.price}</p>
           <button type='button' onClick={()=>AddtoCartHandler(product)}>add to cart</button>
         </div>
-        <Link to= {`/product/${product.id}`}>more  info</Link>
       </div>
   )
 }

@@ -19,10 +19,10 @@ const {products,hasMore,fetchproducts}= useInfinityProducts()
    hasMore={hasMore}
    loader={<h1>loading...</h1>}
    endMessage={
-     <p><b>you have seen iy all.</b></p>
+     <p className='text-center p-10'><b>you have seen it all.</b></p>
    }
    >
-     <div className=" flex flex-wrap">
+     <div className=" flex flex-wrap place-content-around">
      { products.map((product) =>(
        <Suspense key={product.id} fallback={<h1>loading...</h1>}>
        <ProductTemplate key={product.id} product={product}/>
